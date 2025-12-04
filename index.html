@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VPN & Routing – Hilfe & FAQ</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>VPN & Routing – verständlich erklärt</h1>
+      <p class="subtitle">
+        Warum abends plötzlich „Stau im Internet“ ist, wie Peering funktioniert und wie ein VPN
+        genau dabei hilft – inkl. Praxisbeispielen zu Streaming & Gaming.
+      </p>
+    </div>
+  </header>
+
+  <main class="container">
+  
+      <!-- Intro / Szenario: Stau & VPN-Umweg (grafisch) -->
+      <section class="intro">
+        <h2>Was passiert hier technisch – ganz einfach erklärt</h2>
+        <p class="intro-lead">
+          Abends läuft alles zäh, Spiele laggen, Streams ruckeln – aber der Speedtest ist „grün“.
+          Das klingt komisch, ist aber technisch logisch. Hier die kurze Erklärung in vier Blöcken:
+        </p>
+  
+        <div class="intro-grid">
+          <!-- Block 1: Problem -->
+          <article class="intro-card">
+            <div class="intro-card-header">
+              <span class="intro-emoji">📉</span>
+              <h3>Das Problem: Internet-Stau abends</h3>
+            </div>
+            <p>
+              Zur Prime-Time (ca. 18–23 Uhr) sind bestimmte Dienste stark betroffen:
+            </p>
+            <ul>
+              <li>Online-Spiele (Ping schießt hoch, Lag).</li>
+              <li>manche Webseiten und Dienste reagieren kaum.</li>
+              <li>TV- und Streaming-Plattformen ruckeln.</li>
+            </ul>
+            <p class="intro-hint">
+              Dein Anschluss selbst ist meist okay – der Speedtest zu deinem Anbieter zeigt
+              volle Geschwindigkeit. Der Stau entsteht <strong>hinter</strong> deinem Anbieter.
+            </p>
+          </article>
+  
+          <!-- Block 2: Ursache / Peering -->
+          <article class="intro-card">
+            <div class="intro-card-header">
+              <span class="intro-emoji">🚧</span>
+              <h3>Die Ursache: Streit an der „Ausfahrt“</h3>
+            </div>
+            <p>
+              Stell dir das Internet wie viele Autobahnen vor:
+            </p>
+            <ul>
+              <li>Dein Anbieter hat seine eigene Autobahn.</li>
+              <li>Der Spiele- oder TV-Server hat seine eigene Autobahn.</li>
+            </ul>
+            <p>
+              Damit deine Daten rüberkommen, brauchen sie eine <strong>Ausfahrt</strong>
+              zwischen den Netzen. Diese Übergabepunkte heißen <strong>Peering-Points</strong>.
+            </p>
+            <p>
+              Genau dort entsteht das Nadelöhr:
+            </p>
+            <ul>
+              <li>Die Ausfahrt ist zu klein für den Verkehr.</li>
+              <li>
+                Provider und Inhalte-Anbieter streiten, wer den Ausbau bezahlen soll
+                (<em>Paid Peering</em>).
+              </li>
+            </ul>
+            <p class="intro-hint">
+              Ergebnis: Du stehst im Stau – obwohl dein Anschluss „eigentlich“ schnell genug wäre.
+            </p>
+          </article>
+  
+          <!-- Block 3: Event-Stau -->
+          <article class="intro-card">
+            <div class="intro-card-header">
+              <span class="intro-emoji">💥</span>
+              <h3>Event-Stau: Warum es an manchen Tagen schlimmer ist</h3>
+            </div>
+            <p>
+              Zum normalen Feierabend-Traffic kommen an manchen Tagen noch „Großereignisse“ dazu:
+            </p>
+            <ul>
+              <li>
+                <strong>Live-Sport:</strong> z.B. Champions League – Millionen schauen
+                gleichzeitig den gleichen Stream.
+              </li>
+              <li>
+                <strong>Update-Tage:</strong> Große Spiele (CoD, Fortnite) oder Windows
+                verteilen riesige Updates.
+              </li>
+            </ul>
+            <p class="intro-hint">
+              All diese Daten müssen durch dieselben engen Übergabepunkte wie dein TV-Signal.
+              Genau darum sind z.B. Dienstage/Mittwoche oft besonders schlimm.
+            </p>
+          </article>
+  
+          <!-- Block 4: Lösung mit VPN -->
+          <article class="intro-card">
+            <div class="intro-card-header">
+              <span class="intro-emoji">🗺️</span>
+              <h3>Die Lösung: Stau per VPN umfahren</h3>
+            </div>
+            <p>
+              Wenn die direkte Ausfahrt verstopft ist, brauchst du eine Umleitung.
+              Genau das macht ein <strong>VPN (Virtual Private Network)</strong>.
+            </p>
+  
+            <div class="flow-box">
+              <div class="flow-col">
+                <h4>Ohne VPN</h4>
+                <ul>
+                  <li>Dein PC → Netz deines Providers</li>
+                  <li>→ <strong>verstopfter Peering-Punkt</strong></li>
+                  <li>→ Ziel-Server (TV / Spiel / Dienst)</li>
+                </ul>
+                <p class="flow-bad">Ergebnis: Stau, Lag, Ruckeln.</p>
+              </div>
+              <div class="flow-col">
+                <h4>Mit VPN</h4>
+                <ul>
+                  <li>Dein PC → Netz deines Providers</li>
+                  <li>→ <strong>VPN-Server (z.B. Frankfurt)</strong></li>
+                  <li>→ andere, freie Route → Ziel-Server</li>
+                </ul>
+                <p class="flow-good">Ergebnis: Stau umfahren, Verbindung meist deutlich stabiler.</p>
+              </div>
+            </div>
+  
+            <p>
+              Kurz gesagt: VPN ist wie ein <strong>Umsteigebahnhof</strong>. Du verlässt die
+              „Streit-Ausfahrt“ deines Providers und nimmst eine andere Strecke.
+              Deine Gesamt-Geschwindigkeit kann etwas sinken, bleibt aber in der Regel
+              hoch genug für flüssiges Fernsehen und Streaming.
+            </p>
+          </article>
+        </div>
+      </section>
+
+    <!-- Search / Filter -->
+    <section class="search-section">
+      <h2>Fragen & Antworten (FAQ)</h2>
+      <p>Nutze die Suche oder filtere nach Themen, um schnell die passende Antwort zu finden.</p>
+
+      <div class="controls">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Suchbegriff eingeben (z.B. „Netflix“, „Routing“, „DNS“)..."
+          aria-label="FAQ durchsuchen"
+        />
+
+        <div class="filters" aria-label="FAQ nach Themen filtern">
+          <button class="filter-btn active" data-filter="all">Alle</button>
+          <button class="filter-btn" data-filter="grundlagen">Grundlagen</button>
+          <button class="filter-btn" data-filter="routing">Routing</button>
+          <button class="filter-btn" data-filter="streaming">Streaming</button>
+          <button class="filter-btn" data-filter="arbeit">Arbeit & Remote</button>
+          <button class="filter-btn" data-filter="sicherheit">Sicherheit</button>
+          <button class="filter-btn" data-filter="troubleshooting">Troubleshooting</button>
+        </div>
+      </div>
+    </section>
+
+        <!-- FAQ-Block -->
+        <section class="faq" id="faq">
+            <!-- Telekom + Live TV -->
+            <article class="faq-item" data-category="routing streaming">
+              <button class="faq-question" aria-expanded="false">
+                <span>Ich bin Telekom-Kunde – warum hängt Live-TV bei mir vor allem abends?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Kurz gesagt: Weil das <strong>Routing</strong> der Telekom zu unserem System in den
+                  Abendstunden massiv belastet wird und faktisch wie gedrosselt wirkt.
+                </p>
+                <p>
+                  Abends (Prime-Time) schieben sehr viele Kunden gleichzeitig TV- und Streaming-Daten
+                  durch dieselben Übergabepunkte (Peering). Genau dort entsteht ein künstlicher „Stau“.
+                  Das merkst du als:
+                </p>
+                <ul>
+                  <li>Hänger beim Live-TV (Buffering, Pixelbrei).</li>
+                  <li>hohen Ping und Paketverlust bei Streams.</li>
+                  <li>deutlich schlechtere Qualität genau zu Stoßzeiten.</li>
+                </ul>
+                <p>
+                  Wichtig: Dein Anschluss selbst kann im Speedtest (z.B. zu einem Telekom-Server)
+                  trotzdem volle Leistung anzeigen. Das Problem sitzt <strong>dahinter</strong> – an den
+                  Übergabepunkten zu anderen Netzen.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Warum macht das die Telekom -->
+            <article class="faq-item" data-category="routing grundlagen">
+              <button class="faq-question" aria-expanded="false">
+                <span>Warum macht die Telekom so ein Theater mit dem Routing?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Sehr vereinfacht: Weil es um <strong>Geld und Kapazitäten</strong> geht.
+                </p>
+                <p>
+                  Die Telekom sagt im Kern: „Deine Dienste (TV, Streams, Spiele) verursachen
+                  extrem viel Traffic über meine Übergabepunkte. Wenn du mehr Kapazität willst,
+                  musst du für eine größere Anbindung zahlen.“
+                </p>
+                <p>
+                  Die Inhalte-Anbieter (TV-Plattformen, Streamingdienste usw.) sagen:
+                  „Deine Kunden bezahlen dich dafür, dass sie uns störungsfrei erreichen können.
+                  Also musst <em>du</em> deine Übergabepunkte ausbauen.“
+                </p>
+                <p>
+                  Am Ende streiten sich Konzerne um Peering-Kosten und Ausbau – und wir stehen im Stau.
+                  Für dich fühlt es sich so an, als ob „nur unser TV-Angebot spinnt“, obwohl
+                  dahinter eigentlich ein Routing-/Peering-Thema mit der Telekom steckt.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Was ist Routing -->
+            <article class="faq-item" data-category="routing grundlagen">
+              <button class="faq-question" aria-expanded="false">
+                <span>Was bedeutet „Routing“ überhaupt – und wieso entstehen Probleme?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  <strong>Routing</strong> ist die Route, die deine Daten von deinem Router zu uns nehmen
+                  und wieder zurück – sozusagen die Abfolge der Autobahnen und Ausfahrten im Internet.
+                </p>
+                <p>
+                  Zwischen deinem Anschluss und unserem System liegen mehrere Netze und Übergabepunkte.
+                  Wenn ein Übergabepunkt (Peering) zu klein dimensioniert ist oder bewusst nicht
+                  großzügig ausgebaut wird, entsteht ein künstlicher Stau:
+                </p>
+                <ul>
+                  <li>Wer „Maut zahlt“ bzw. für Kapazität bezahlt, bekommt die breite Spur.</li>
+                  <li>Der Rest steht im Stop-and-Go oder fährt nur auf der rechten Spur.</li>
+                </ul>
+                <p>
+                  Genau dort kommen die Latenzspitzen, Einbrüche und Paketverluste her,
+                  die du abends beim Fernsehen oder Zocken bemerkst.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Warum hilft VPN -->
+            <article class="faq-item" data-category="routing streaming troubleshooting">
+              <button class="faq-question" aria-expanded="false">
+                <span>Wieso hilft ein VPN gegen diese Probleme?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Ein VPN ist technisch gesehen eine <strong>Umleitung über eine andere Route</strong>.
+                </p>
+                <p>Vereinfacht passiert Folgendes:</p>
+                <ol>
+                  <li>
+                    Ohne VPN: Dein Router → Telekom-Netz → verstopfter Übergabepunkt →
+                    unser System → Stau, Lag, Buffering.
+                  </li>
+                  <li>
+                    Mit VPN:
+                    <ul>
+                      <li>Dein Router verbindet sich zuerst zu einem VPN-Server (z.B. in Frankfurt).</li>
+                      <li>
+                        Diese Strecke (Router → Telekom → VPN-Server) ist in der Regel gut
+                        angebunden, weil VPN-Anbieter dafür bezahlen.
+                      </li>
+                      <li>
+                        Vom VPN-Server gehen deine Daten über <strong>andere, freie Peering-Strecken</strong>
+                        weiter zu uns.
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+                <p>
+                  Dadurch umgehst du das Nadelöhr im Telekom-Peering. Deine generelle Geschwindigkeit
+                  kann mit VPN etwas niedriger sein, bleibt aber normalerweise hoch genug,
+                  um stabil Live-TV schauen zu können.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Bin ich auf VPN angewiesen -->
+            <article class="faq-item" data-category="routing troubleshooting">
+              <button class="faq-question" aria-expanded="false">
+                <span>Heißt das, dass ich in solchen Fällen auf ein VPN angewiesen bin?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  <strong>In den Phasen, in denen die Telekom-Routen zu uns massiv überlastet sind:
+                  Ja.</strong>
+                </p>
+                <p>
+                  Solange sich die großen Provider und Inhalte-Anbieter nicht einigen
+                  und die Peering-Kapazitäten nicht sauber ausgebaut werden, bleiben diese
+                  Engpässe bestehen. Wir können an der Ursache nichts ändern – nur eine
+                  alternative Route anbieten.
+                </p>
+                <p>
+                  Ein VPN ist deshalb aktuell die <strong>praktische Lösung</strong>, um den Stau zu umgehen
+                  und Live-TV/Streams trotzdem stabil nutzen zu können.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Kostet VPN etwas -->
+            <article class="faq-item" data-category="grundlagen sicherheit">
+              <button class="faq-question" aria-expanded="false">
+                <span>Kostet ein VPN etwas? Welche Optionen habe ich?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  In der Praxis: <strong>Ja, ein gutes VPN kostet normalerweise etwas.</strong>
+                </p>
+                <ul>
+                  <li>
+                    <strong>Gratis-Varianten (z.B. Proton Free):</strong> funktionieren grundsätzlich,
+                    haben aber oft hohe Auslastung, Limitierungen und schwankende Qualität.
+                  </li>
+                  <li>
+                    <strong>Bezahlte VPNs:</strong> Für ein paar Euro im Monat kannst du dir zusammen mit
+                    Freunden oder Familie einen Zugang teilen (je nach Anbieter mehrere Geräte/Slots).
+                  </li>
+                </ul>
+                <p>
+                  Ob du dann einen Anbieter über unseren Link, Surfshark, NordVPN oder einen
+                  anderen nimmst, ist für uns zweitrangig. Wichtig ist nur:
+                  <strong>Du solltest für solche Fälle überhaupt ein VPN zur Hand haben.</strong>
+                </p>
+                <p class="highlight">
+                  Hinweis: Achte auf seriöse Anbieter, lies kurz die AGB/Datenschutzinfos
+                  und nutze VPN nicht für Dinge, die rechtlich problematisch sind.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Netflix / YouTube vs. TxxxM -->
+            <article class="faq-item" data-category="streaming routing">
+              <button class="faq-question" aria-expanded="false">
+                <span>Bei mir läuft Netflix/YouTube, aber TxxxM hängt – wie kann das sein?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Dass Netflix oder YouTube funktionieren, während TxxxM hängt, heißt
+                  <strong>nicht</strong>, dass bei TxxxM „alles kaputt“ ist.
+                </p>
+                <p>
+                  Hintergrund: Jede Plattform hat <strong>andere Routen und andere Peering-Partner</strong>.
+                </p>
+                <ul>
+                  <li>
+                    Netflix/YouTube haben extrem viele eigene Knoten und Caches direkt bei Providern,
+                    teilweise sogar <em>im</em> Netz der Telekom.
+                  </li>
+                  <li>
+                    Unser Signal (TxxxM) nimmt andere Wege, die oft über die umstrittenen Peering-Punkte gehen.
+                  </li>
+                </ul>
+                <p>
+                  Deswegen kann es sein, dass:
+                </p>
+                <ul>
+                  <li>Netflix/YouTube noch flüssig laufen,</li>
+                  <li>TxxxM aber genau im Telekom-Peering im Stau steht.</li>
+                </ul>
+                <p>
+                  Anders gesagt: Gleicher Anschluss, aber verschiedene Autobahnen – und genau
+                  unsere Strecke ist gerade verstopft.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Wie lange gibt es das Problem schon -->
+            <article class="faq-item" data-category="grundlagen">
+              <button class="faq-question" aria-expanded="false">
+                <span>Ist das ein neues Problem – oder gibt es das schon länger?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Dieses Thema begleitet uns seit <strong>vielen Jahren</strong> – grob gesagt seit über
+                  einem Jahrzehnt.
+                </p>
+                <p>
+                  Mal sind die Rahmenbedingungen besser, mal schlechter:
+                </p>
+                <ul>
+                  <li>In „ruhigeren“ Phasen merkst du fast nichts – VPN ist dann optional.</li>
+                  <li>
+                    In „Streit-/Peak-Phasen“ zwischen Providern und Inhalte-Anbietern wird es
+                    deutlich spürbarer – dann hilft VPN oft massiv.
+                  </li>
+                </ul>
+                <p>
+                  Das betrifft im Prinzip <strong>alle TV-Anbieter</strong>, die in Deutschland über das Internet
+                  verkaufen. Im Süden (bestimmte Regionen/Backbones) fällt es teils noch stärker auf
+                  als weiter nördlich.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Dauerhaft VPN an? -->
+            <article class="faq-item" data-category="sicherheit grundlagen">
+              <button class="faq-question" aria-expanded="false">
+                <span>Kann ich VPN einfach dauerhaft eingeschaltet lassen?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Ja, viele Nutzer lassen VPN einfach <strong>immer</strong> an – das hat sogar weitere Vorteile:
+                </p>
+                <ul>
+                  <li>Mehr Schutz in öffentlichen WLANs (Urlaub, Hotels, Flughäfen).</li>
+                  <li>Etwas mehr Privatsphäre gegenüber dem eigenen Provider.</li>
+                  <li>Teilweise bessere Routen auch zu anderen Diensten.</li>
+                </ul>
+                <p>
+                  Beachte aber:
+                </p>
+                <ul>
+                  <li>Manche Streamingdienste erkennen und blockieren VPNs (Geoblocking-Regeln).</li>
+                  <li>Ein minimaler Geschwindigkeitsverlust ist normal.</li>
+                </ul>
+                <p>
+                  Ob du VPN nur bei Problemen oder dauerhaft nutzt, ist deine Entscheidung.
+                  Für unsere TV-Plattform ist es in kritischen Phasen einfach das beste Werkzeug,
+                  um Routingprobleme zu umgehen.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Wo installieren / Router / Fire TV -->
+            <article class="faq-item" data-category="troubleshooting arbeit">
+              <button class="faq-question" aria-expanded="false">
+                <span>Wo richte ich VPN am besten ein – Handy, Fire TV, Router?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Es gibt mehrere Möglichkeiten – je nach Setup und Komfort:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Direkt auf dem Gerät:</strong> z.B. VPN-App auf Fire TV, Android-Box,
+                    Tablet oder Smartphone.
+                  </li>
+                  <li>
+                    <strong>Auf einem VPN-fähigen Router:</strong> Dann laufen automatisch alle Geräte
+                    im Haushalt über das VPN (TV, Boxen, Handys usw.).
+                  </li>
+                </ul>
+                <p>
+                  Für die meisten Nutzer ist die App-Variante am Gerät der schnellste Einstieg.
+                  Wenn du einen kompatiblen Router hast, ist die Router-Lösung die eleganteste
+                  und komfortabelste – vor allem, wenn mehrere Personen im Haushalt das TV-Angebot nutzen.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Was wir tun / Diskussion -->
+            <article class="faq-item" data-category="troubleshooting">
+              <button class="faq-question" aria-expanded="false">
+                <span>Was macht ihr auf eurer Seite – und worüber diskutiert ihr nicht?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Was wir immer tun:
+                </p>
+                <ul>
+                  <li>Technische Probleme auf unserer Seite (System, einzelne Sender) offen kommunizieren.</li>
+                  <li>Fehler im System analysieren und beheben, soweit sie in unserem Einflussbereich liegen.</li>
+                  <li>Empfehlungen geben, wie du mit VPN das Telekom-Routingthema umgehen kannst.</li>
+                </ul>
+                <p>
+                  Was wir <strong>nicht</strong> tun:
+                </p>
+                <ul>
+                  <li>
+                    Den „Schuh“ für Peering-/Routing-Konflikte der Telekom & Co. anziehen – darauf haben wir
+                    keinen Einfluss.
+                  </li>
+                  <li>
+                    Endlos darüber diskutieren, warum bei jemandem Netflix/YouTube laufen,
+                    aber nur TxxxM hängt – die technischen Gründe dazu stehen hier schwarz auf weiß.
+                  </li>
+                </ul>
+                <p>
+                  Es gibt für dieses konkrete Problem eine klare Lösung: <strong>VPN</strong>.
+                  Damit können wir die Symptome effektiv abmildern, auch wenn wir die
+                  eigentliche Ursache im Backbone nicht selbst beseitigen können.
+                </p>
+              </div>
+            </article>
+      
+            <!-- Allgemeine VPN-Vorteile -->
+            <article class="faq-item" data-category="sicherheit grundlagen">
+              <button class="faq-question" aria-expanded="false">
+                <span>Welche allgemeinen Vorteile hat ein VPN noch – unabhängig von TxxxM?</span>
+                <span class="faq-icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" hidden>
+                <p>
+                  Auch abseits von unserem TV-Angebot ist ein VPN ein sinnvolles Tool, z.B.:
+                </p>
+                <ul>
+                  <li>Schutz deiner Daten in öffentlichen WLANs (Hotels, Cafés, Urlaub).</li>
+                  <li>Mehr Kontrolle darüber, welche Routen dein Traffic nimmt.</li>
+                  <li>Teilweise Zugriff auf Inhalte, die in bestimmten Ländern sonst nicht verfügbar sind
+                    (immer im Rahmen der jeweiligen Nutzungsbedingungen).
+                  </li>
+                </ul>
+                <p>
+                  Deshalb empfehlen wir generell, für den Alltag und gerade für Reisen/Urlaub
+                  ein ordentliches VPN im „Werkzeugkasten“ zu haben – unabhängig davon, ob du
+                  es für TxxxM, fürs Zocken oder fürs Surfen nutzt.
+                </p>
+              </div>
+            </article>
+          </section>
+
+
+
+              <!-- VPN-Empfehlungen -->
+    <section class="vpn-reco" id="vpn">
+        <h2>Welche VPN-Anbieter sind sinnvoll?</h2>
+        <p class="vpn-reco-lead">
+          Wichtig ist nicht, dass du „den perfekten“ Anbieter nimmst – wichtig ist,
+          dass du <strong>überhaupt</strong> ein stabiles VPN zur Hand hast, wenn das Routing
+          deines Anbieters wieder streikt. Hier ein kurzer Überblick:
+        </p>
+  
+        <div class="vpn-grid">
+          <!-- Allgemeine Anbieter -->
+          <article class="vpn-card">
+            <h3>Bekannte Anbieter</h3>
+            <p>
+              Gute und weit verbreitete VPN-Anbieter sind zum Beispiel:
+            </p>
+            <ul>
+              <li>Surfshark</li>
+              <li>NordVPN</li>
+              <li>Proton VPN</li>
+            </ul>
+            <p>
+              Preislich liegen diese Angebote oft grob bei
+              <strong>ca. 80&nbsp;€ für 24&nbsp;Monate</strong> (je nach Aktion und Paket).
+            </p>
+            <p class="vpn-note">
+              Für viele Nutzer sind das solide Optionen, vor allem wenn man noch andere
+              Dinge wie Geoblocking, extra Features oder viele Standorte nutzen möchte.
+            </p>
+          </article>
+  
+          <!-- Privado Empfehlung -->
+          <article class="vpn-card vpn-card-highlight">
+            <h3>Unser Favorit im Alltag: PrivadoVPN</h3>
+            <p>
+              Wir persönlich nutzen aktuell <strong>PrivadoVPN</strong> – vor allem,
+              weil Preis/Leistung für unseren Anwendungsfall sehr gut passt:
+            </p>
+            <ul>
+              <li>sehr viele Serverstandorte zur Auswahl</li>
+              <li>Apps für <strong>Fire TV</strong>, <strong>Android</strong> und <strong>iOS</strong></li>
+              <li>
+                im Alltag super stabil für TV-Streaming und allgemeine Nutzung
+              </li>
+              <li>
+                <strong>ca. 30&nbsp;€ für 24&nbsp;Monate</strong> (je nach Aktion)
+              </li>
+              <li>
+                Nutzung auf <strong>bis zu 5 Geräten gleichzeitig</strong> möglich
+              </li>
+            </ul>
+            <p class="vpn-note">
+              Für viele Haushalte reicht das völlig aus: ein Account, mehrere Geräte,
+              guter Preis und eine einfache Einrichtung.
+            </p>
+  
+            <!-- Affiliate-CTA -->
+            <div class="vpn-cta-wrap">
+              <a
+                class="vpn-cta-btn"
+                href="https://privadovpn.com/getprivadovpn/#a_aid=sakasolutions"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <span>PrivadoVPN jetzt ansehen</span>
+                <span class="vpn-cta-arrow">➜</span>
+              </a>
+              <p class="vpn-cta-hint">
+                Der Link führt direkt zur PrivadoVPN-Seite. Du kannst natürlich auch
+                jeden anderen seriösen Anbieter wählen – Hauptsache, du hast eine
+                funktionierende VPN-Option.
+              </p>
+            </div>
+          </article>
+        </div>
+      </section>
+  
+
+
+
+    <!-- Abschluss -->
+    <section class="outro">
+      <h2>Keine offene Frage mehr?</h2>
+      <p>
+        Diese Seite soll alle typischen Fragen rund um VPN, Routingprobleme und Streaming abdecken.
+        
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© <span id="year"></span> VPN & Routing – Infoseite</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
