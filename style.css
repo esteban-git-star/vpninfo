@@ -367,3 +367,98 @@
   .reveal.active { opacity: 1; transform: translateY(0); }
 
   .site-footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; margin-top: 3rem; }
+
+
+  /* ===========================
+   Free VPN Section
+   =========================== */
+.free-vpn-section {
+  margin-top: -2rem; /* Etwas näher an die obere Box rücken */
+  margin-bottom: 5rem;
+}
+
+.free-vpn-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ab Tablet nebeneinander */
+@media(min-width: 700px) {
+  .free-vpn-card {
+      flex-direction: row;
+      text-align: left;
+      gap: 2rem;
+      padding: 3rem;
+  }
+}
+
+.free-icon-wrapper {
+  background: #ecfdf5; /* Ein sehr helles Grün */
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-bottom: 1rem;
+}
+@media(min-width: 700px) { .free-icon-wrapper { margin-bottom: 0; } }
+
+.free-emoji {
+  font-size: 2.5rem;
+}
+
+.badge-free {
+  display: inline-block;
+  background: #10b981; /* Grün */
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.8rem;
+  border-radius: 99px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.free-content h3 {
+  margin: 0.5rem 0 0.8rem;
+  font-size: 1.5rem;
+}
+
+.free-note {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1.5rem;
+}
+
+/* Der Button speziell für diese Box */
+.btn-free-download {
+  display: inline-block;
+  background: white;
+  color: #334155;
+  border: 2px solid #cbd5e1;
+  padding: 0.8rem 1.5rem;
+  border-radius: 99px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.btn-free-download:hover {
+  border-color: #3b82f6;
+  color: #3b82f6;
+  background: #eff6ff;
+  transform: translateY(-2px);
+}
