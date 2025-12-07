@@ -1,638 +1,369 @@
 /* ===========================
-   Grund-Design & Farben
+   Variables & Reset
    =========================== */
-
    :root {
-    --bg: #f5f7fb;
-    --bg-elevated: #ffffff;
-    --accent: #2563eb;
-    --accent-soft: #e0edff;
-    --accent-border: #c4d7ff;
-    --text: #111827;
-    --text-muted: #6b7280;
-    --border: #e5e7eb;
-    --radius-md: 10px;
-    --radius-lg: 16px;
-    --shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.08);
-    --transition-fast: 0.16s ease-out;
-    --transition-normal: 0.22s ease;
+    --primary: #3b82f6;      /* Electric Blue */
+    --primary-glow: rgba(59, 130, 246, 0.5);
+    --secondary: #1e293b;    /* Slate Dark */
+    --accent: #10b981;       /* Success Green */
+    --danger: #ef4444;       /* Error Red */
+    
+    --bg-body: #f8fafc;
+    --bg-surface: #ffffff;
+    
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --text-light: #f1f5f9;
+
+    --font-heading: 'Poppins', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    --radius: 16px;
   }
+
+  *, *::before, *::after { box-sizing: border-box; }
   
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-  
-  html,
+  html { scroll-behavior: smooth; }
+
   body {
     margin: 0;
-    padding: 0;
+    font-family: var(--font-body);
+    background-color: var(--bg-body);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
   }
+
+  h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 700; color: var(--text-main); margin-top: 0; }
   
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    background-color: var(--bg);
-    color: var(--text);
-    line-height: 1.7;
-    min-height: 100vh;
-  }
+  a { text-decoration: none; }
   
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 1.5rem; position: relative; }
+
   /* ===========================
-     Layout
+     BOMBASTIC HERO
      =========================== */
-  
-  .container {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.25rem 2.5rem;
-  }
-  
-  /* ===========================
-     Header
-     =========================== */
-  
-  .site-header {
-    padding: 2.5rem 0 1.5rem;
-  }
-  
-  .site-header h1 {
-    font-size: clamp(2rem, 3vw, 2.4rem);
-    margin: 0 0 0.5rem;
-    color: #0f172a;
-  }
-  
-  .subtitle {
-    margin: 0;
-    color: var(--text-muted);
-    max-width: 40rem;
-    font-size: 0.98rem;
-  }
-  
-  /* ===========================
-     Intro-Box
-     =========================== */
-  
-  main {
-    padding-bottom: 2rem;
-  }
-  
-  .intro {
-    background: linear-gradient(135deg, #eff6ff, #ffffff);
-    border-radius: var(--radius-lg);
-    padding: 1.6rem 1.5rem;
-    box-shadow: var(--shadow-soft);
-    margin-bottom: 1.6rem;
-    border: 1px solid #dbeafe;
-  }
-  
-  .intro h2 {
-    margin-top: 0;
-    margin-bottom: 0.5rem;
-    font-size: 1.25rem;
-  }
-  
-  .intro p {
-    margin-top: 0.1rem;
-    margin-bottom: 0.6rem;
-    color: #374151;
-    font-size: 0.97rem;
-  }
-  
-  .intro-list {
-    list-style: none;
-    padding: 0;
-    margin: 0.4rem 0 0;
-    display: grid;
-    gap: 0.35rem;
-  }
-  
-  .intro-list li {
-    padding-left: 1.2rem;
+  .hero-section {
     position: relative;
-    font-size: 0.95rem;
-    color: #4b5563;
-  }
-  
-  .intro-list li::before {
-    content: "";
-    position: absolute;
-    left: 0.25rem;
-    top: 0.6rem;
-    width: 7px;
-    height: 7px;
-    border-radius: 999px;
-    background-color: var(--accent);
-  }
-  
-  /* ===========================
-     Such- & Filterbereich
-     =========================== */
-  
-  .search-section {
-    margin-top: 2rem;
-    margin-bottom: 1.4rem;
-  }
-  
-  .search-section h2 {
-    margin: 0 0 0.3rem;
-    font-size: 1.2rem;
-  }
-  
-  .search-section p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 0.94rem;
-  }
-  
-  .controls {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 0.9rem;
-  }
-  
-  #searchInput {
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background-color: #ffffff;
-    color: var(--text);
-    padding: 0.6rem 1rem;
-    font-size: 0.95rem;
-    outline: none;
-    box-shadow: 0 0 0 0 transparent;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast),
-      background var(--transition-fast);
-  }
-  
-  #searchInput::placeholder {
-    color: #9ca3af;
-  }
-  
-  #searchInput:focus {
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
-    background-color: #ffffff;
-  }
-  
-  .filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.4rem;
-  }
-  
-  .filter-btn {
-    border-radius: 999px;
-    border: 1px solid var(--border);
-    background-color: #ffffff;
-    color: var(--text-muted);
-    padding: 0.35rem 0.75rem;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: background var(--transition-fast), color var(--transition-fast),
-      border-color var(--transition-fast), transform 0.08s ease-out;
-  }
-  
-  .filter-btn:hover {
-    transform: translateY(-1px);
-    border-color: #cbd5f5;
-  }
-  
-  .filter-btn.active {
-    background: var(--accent-soft);
-    border-color: var(--accent-border);
-    color: #1d4ed8;
-    font-weight: 500;
-  }
-  
-  /* ===========================
-     FAQ
-     =========================== */
-  
-  .faq {
-    margin-bottom: 1.8rem;
-  }
-  
-  .faq-item {
-    background-color: var(--bg-elevated);
-    border-radius: var(--radius-md);
-    border: 1px solid var(--border);
-    margin-bottom: 0.7rem;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
+    background: #0f172a;
+    color: white;
+    padding: 6rem 0 8rem;
     overflow: hidden;
-    transition: border-color var(--transition-normal),
-      background-color var(--transition-normal), box-shadow var(--transition-normal),
-      transform 0.08s ease-out;
-  }
-  
-  .faq-item.hidden {
-    display: none;
-  }
-  
-  .faq-item.open {
-    border-color: var(--accent-border);
-    background-color: #f9fbff;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
-    transform: translateY(-1px);
-  }
-  
-  .faq-question {
-    width: 100%;
-    padding: 0.8rem 1rem;
-    border: none;
-    background: transparent;
-    color: inherit;
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.7rem;
-    cursor: pointer;
-    text-align: left;
-    font-size: 0.98rem;
-  }
-  
-  .faq-question span:first-child {
-    flex: 1;
-    color: #111827;
-  }
-  
-  .faq-icon {
-    flex-shrink: 0;
-    width: 1.3rem;
     text-align: center;
-    font-weight: 600;
-    font-size: 1.1rem;
-    color: var(--accent);
-    transition: transform var(--transition-normal);
   }
-  
-  .faq-item.open .faq-icon {
-    transform: rotate(45deg);
+
+  /* Animierter Hintergrund */
+  .hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: 1;
+    overflow: hidden;
   }
-  
-  .faq-answer {
-    padding: 0 1rem 0.8rem;
-    font-size: 0.93rem;
-    color: #374151;
-    border-top: 1px solid #eef2f7;
+
+  .glowing-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.6;
+    animation: float 10s infinite alternate ease-in-out;
   }
-  
-  .faq-answer p {
-    margin: 0.4rem 0;
+  .orb-1 { width: 400px; height: 400px; background: #3b82f6; top: -100px; left: -100px; }
+  .orb-2 { width: 300px; height: 300px; background: #8b5cf6; bottom: -50px; right: -50px; animation-delay: -5s; }
+
+  @keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(30px, 50px); }
   }
-  
-  .faq-answer ul,
-  .faq-answer ol {
-    margin-top: 0.35rem;
-    margin-bottom: 0.4rem;
-    padding-left: 1.2rem;
-  }
-  
-  .faq-answer li {
-    margin-bottom: 0.18rem;
-  }
-  
-  /* Info-Hinweis (z.B. Geoblocking-Box) */
-  
-  .highlight {
-    margin-top: 0.6rem;
-    padding: 0.65rem 0.75rem;
-    border-radius: 10px;
-    background-color: #fef3c7;
-    border: 1px solid #facc15;
+
+  .hero-content { position: relative; z-index: 10; }
+
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
     font-size: 0.9rem;
-    color: #92400e;
+    font-weight: 500;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    color: #fff;
   }
   
-  /* ===========================
-     Outro
-     =========================== */
-  
-  .outro {
-    margin-top: 2rem;
-    padding: 1.2rem 1.1rem;
-    border-radius: var(--radius-md);
-    border: 1px dashed var(--border);
-    background-color: #ffffff;
+  .text-gradient {
+    background: linear-gradient(to right, #60a5fa, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  
-  .outro h2 {
-    margin-top: 0;
-    margin-bottom: 0.4rem;
-    font-size: 1.1rem;
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+    color: #cbd5e1;
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
   }
-  
-  .outro p {
-    margin: 0;
-    color: var(--text-muted);
-    font-size: 0.94rem;
+
+  .hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* Buttons */
+  .btn {
+    padding: 0.8rem 2rem;
+    border-radius: 99px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex; align-items: center; justify-content: center;
   }
-  
-  /* ===========================
-     Footer
-     =========================== */
-  
-  .site-footer {
-    border-top: 1px solid #e5e7eb;
-    padding: 0.9rem 0 1.2rem;
-    margin-top: 0.8rem;
-    font-size: 0.85rem;
-    color: var(--text-muted);
+
+  .btn-primary {
+    background: var(--primary);
+    color: white;
   }
-  
-  /* ===========================
-     Responsive
-     =========================== */
-  
-  @media (min-width: 768px) {
-    .site-header {
-      padding-top: 3rem;
-    }
-  
-    .intro {
-      padding: 1.8rem 1.8rem;
-    }
-  
-    #searchInput {
-      max-width: 420px;
-    }
-  
-    .faq-question {
-      padding: 0.9rem 1.1rem;
-    }
-  
-    .faq-answer {
-      padding: 0 1.1rem 0.9rem;
-    }
+  .btn-glow {
+    box-shadow: 0 0 20px var(--primary-glow);
+    animation: pulse 3s infinite;
   }
-  
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(59, 130, 246, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px var(--primary-glow); }
+
+  .btn-secondary {
+    background: rgba(255,255,255,0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .btn-secondary:hover { background: rgba(255,255,255,0.2); }
 
   /* ===========================
-   Intro Grid / Karten-Layout
-   =========================== */
+     MAIN CONTENT & CARDS
+     =========================== */
+     .main-wrapper {
+      margin-top: -4rem;      /* Zieht es hoch */
+      position: relative;     /* WICHTIG für z-index */
+      z-index: 50;            /* <--- ÄNDERUNG: Setz das hoch auf 50! */
+      padding-bottom: 4rem;
+      
+      /* Falls du einen weißen Hintergrund für den ganzen Block willst, 
+         füge das hier noch hinzu (sieht meist sauberer aus): */
+      background: var(--bg-body); 
+      border-radius: 24px 24px 0 0; /* Runde Ecken oben */
+      padding-top: 3rem; /* Etwas Abstand für den Text nach oben */
+    }
 
-.intro-lead {
-    margin-top: 0.3rem;
-    margin-bottom: 1rem;
-    color: var(--text-muted);
-    font-size: 0.96rem;
-  }
-  
+  .section-header { text-align: center; margin-bottom: 3rem; margin-top: 2rem;}
+  .section-header h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+  .section-lead { color: var(--text-muted); font-size: 1.1rem; }
+
+  /* Feature Grid */
   .intro-grid {
     display: grid;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 4rem;
   }
-  
-  /* ab Tablet nebeneinander */
-  @media (min-width: 768px) {
-    .intro-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+
+  .feature-card {
+    background: var(--bg-surface);
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-soft);
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.05);
   }
-  
-  .intro-card {
-    background-color: #ffffff;
+  .feature-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); }
+
+  .icon-box {
+    width: 50px; height: 50px;
+    background: #eff6ff;
     border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    padding: 0.9rem 0.95rem;
-    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.06);
-    font-size: 0.94rem;
-  }
-  
-  .intro-card-header {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    margin-bottom: 0.4rem;
-  }
-  
-  .intro-emoji {
-    width: 1.6rem;
-    height: 1.6rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-  }
-  
-  .intro-card h3 {
-    margin: 0;
-    font-size: 1rem;
-  }
-  
-  .intro-card p {
-    margin: 0.25rem 0;
-    color: #374151;
-  }
-  
-  .intro-card ul {
-    margin: 0.25rem 0 0.3rem;
-    padding-left: 1.1rem;
-  }
-  
-  .intro-card li {
-    margin-bottom: 0.18rem;
-  }
-  
-  .intro-hint {
-    margin-top: 0.4rem;
-    padding: 0.45rem 0.5rem;
-    border-radius: 8px;
-    background-color: #eff6ff;
-    border: 1px solid #dbeafe;
-    font-size: 0.88rem;
-    color: #1f2937;
-  }
-  
-  /* ===========================
-     Flow: ohne VPN vs. mit VPN
-     =========================== */
-  
-  .flow-box {
-    display: grid;
-    gap: 0.6rem;
-    margin: 0.6rem 0 0.6rem;
-  }
-  
-  @media (min-width: 640px) {
-    .flow-box {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  
-  .flow-col {
-    background-color: #f9fafb;
-    border-radius: 10px;
-    border: 1px solid #e5e7eb;
-    padding: 0.55rem 0.6rem;
-    font-size: 0.9rem;
-  }
-  
-  .flow-col h4 {
-    margin: 0 0 0.25rem;
-    font-size: 0.9rem;
-    color: #111827;
-  }
-  
-  .flow-col ul {
-    margin: 0 0 0.35rem;
-    padding-left: 1.1rem;
-  }
-  
-  .flow-bad {
-    margin: 0;
-    font-size: 0.86rem;
-    color: #b91c1c;
-  }
-  
-  .flow-good {
-    margin: 0;
-    font-size: 0.86rem;
-    color: #15803d;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
   }
 
-
-
-  /* ===========================
-   VPN Empfehlungen
-   =========================== */
-
-.vpn-reco {
-    margin-top: 2.2rem;
-    margin-bottom: 2rem;
-    padding: 1.6rem 1.4rem 1.5rem;
-    border-radius: 16px;
-    background-color: #ffffff;
-    border: 1px solid #e5e7eb;
-    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
-  }
-  
-  .vpn-reco h2 {
-    margin-top: 0;
-    margin-bottom: 0.4rem;
-    font-size: 1.25rem;
-  }
-  
-  .vpn-reco-lead {
-    margin: 0 0 1.1rem;
-    font-size: 0.96rem;
-    color: var(--text-muted);
-  }
-  
-  .vpn-grid {
-    display: grid;
-    gap: 1rem;
-  }
-  
-  @media (min-width: 768px) {
-    .vpn-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-  
-  .vpn-card {
-    background-color: #f9fafb;
-    border-radius: 12px;
-    border: 1px solid #e5e7eb;
-    padding: 0.9rem 1rem;
-    font-size: 0.93rem;
-  }
-  
-  .vpn-card h3 {
-    margin: 0 0 0.35rem;
-    font-size: 1rem;
-  }
-  
-  .vpn-card p {
-    margin: 0.25rem 0;
-    color: #374151;
-  }
-  
-  .vpn-card ul {
-    margin: 0.25rem 0 0.4rem;
-    padding-left: 1.15rem;
-  }
-  
-  .vpn-card li {
-    margin-bottom: 0.18rem;
-  }
-  
-  .vpn-note {
-    margin-top: 0.35rem;
-    padding: 0.45rem 0.55rem;
-    border-radius: 9px;
-    background-color: #eef2ff;
-    border: 1px solid #e0e7ff;
-    font-size: 0.88rem;
-    color: #1f2937;
-  }
-  
-  .vpn-card-highlight {
-    background: linear-gradient(135deg, #eff6ff, #ffffff);
-    border-color: #bfdbfe;
-  }
-  
-  /* ===========================
-     Affiliate CTA Button
-     =========================== */
-  
-  .vpn-cta-wrap {
-    margin-top: 0.6rem;
-  }
-  
-  .vpn-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.55rem 1rem;
-    border-radius: 999px;
-    border: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    text-decoration: none;
-    cursor: pointer;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: #ffffff;
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+  .highlight-card {
+    background: linear-gradient(135deg, #ffffff 0%, #eff6ff 100%);
+    border: 2px solid #bfdbfe;
     position: relative;
     overflow: hidden;
-    transition: transform 0.12s ease-out, box-shadow 0.12s ease-out;
-    animation: vpn-cta-pulse 2.4s ease-in-out infinite;
+  }
+  .highlight-icon { background: var(--primary); color: white; }
+
+  /* ===========================
+     COMPARISON (RED/GREEN)
+     =========================== */
+  .comparison-wrapper {
+    background: white;
+    border-radius: var(--radius);
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .comparison-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media(min-width: 768px) { .comparison-grid { grid-template-columns: 1fr 1fr; } }
+
+  .compare-col {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
   }
   
-  .vpn-cta-btn:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 14px 26px rgba(37, 99, 235, 0.35);
+  .compare-header { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1.5rem; }
+  .status-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-red { background: var(--danger); box-shadow: 0 0 10px rgba(239, 68, 68, 0.4); }
+  .dot-green { background: var(--accent); box-shadow: 0 0 10px rgba(16, 185, 129, 0.4); }
+  
+  .route-visual { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; font-weight: 500; }
+  .arrow { color: var(--text-muted); opacity: 0.5; font-size: 0.8rem; }
+  
+  .blocked { color: var(--danger); background: #fef2f2; padding: 0.3rem 0.8rem; border-radius: 8px; font-weight: 700; }
+  .free { color: var(--accent); background: #ecfdf5; padding: 0.3rem 0.8rem; border-radius: 8px; font-weight: 700; }
+  .vpn-active { color: var(--primary); font-weight: 700; border: 1px solid #bfdbfe; padding: 0.3rem 0.8rem; border-radius: 8px; background: #eff6ff;}
+
+  .result-badge {
+    margin-top: 1.5rem; text-align: center; padding: 0.8rem; border-radius: 8px; font-weight: 700;
   }
+  .badge-bad { background: #fee2e2; color: #991b1b; }
+  .badge-good { background: #dcfce7; color: #166534; }
+
+  /* ===========================
+     FAQ MODERN
+     =========================== */
+  .search-section { text-align: center; margin-bottom: 3rem; margin-top: 4rem;}
   
-  .vpn-cta-arrow {
-    display: inline-block;
-    font-size: 1.05rem;
-    transition: transform 0.18s ease-out;
+  .controls-container { max-width: 600px; margin: 0 auto; }
+  
+  .search-bar { position: relative; margin-bottom: 1.5rem; }
+  #searchInput {
+    width: 100%; padding: 1rem 1.5rem;
+    border-radius: 99px; border: 2px solid #e2e8f0;
+    font-size: 1rem; outline: none; transition: 0.3s;
   }
-  
-  .vpn-cta-btn:hover .vpn-cta-arrow {
-    transform: translateX(3px);
+  #searchInput:focus { border-color: var(--primary); box-shadow: 0 0 0 4px var(--primary-glow); }
+  .search-btn { position: absolute; right: 10px; top: 5px; background: none; border: none; font-size: 1.2rem; cursor: pointer; }
+
+  .filter-tags { display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap; }
+  .filter-pill {
+    background: white; border: 1px solid #e2e8f0; padding: 0.5rem 1rem;
+    border-radius: 99px; cursor: pointer; transition: 0.2s; font-size: 0.9rem; color: var(--text-muted);
   }
+  .filter-pill.active, .filter-pill:hover { background: var(--secondary); color: white; border-color: var(--secondary); }
+
+  .faq-list { max-width: 800px; margin: 0 auto; }
   
-  .vpn-cta-hint {
-    margin: 0.4rem 0 0;
-    font-size: 0.82rem;
-    color: var(--text-muted);
+  .faq-card {
+    background: white; border-radius: 12px; margin-bottom: 1rem;
+    border: 1px solid #e2e8f0; overflow: hidden; transition: 0.3s;
   }
-  
-  /* Sanfte „Pulse“-Animation für den Button */
-  @keyframes vpn-cta-pulse {
-    0% {
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-    }
-    50% {
-      box-shadow: 0 12px 28px rgba(37, 99, 235, 0.45);
-    }
-    100% {
-      box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
-    }
+  .faq-card.hidden { display: none; }
+  .faq-card:hover { border-color: var(--primary); }
+
+  .faq-trigger {
+    width: 100%; padding: 1.2rem; display: flex; justify-content: space-between;
+    align-items: center; background: none; border: none; cursor: pointer;
+    font-family: var(--font-heading); font-weight: 600; color: var(--text-main); font-size: 1rem; text-align: left;
   }
+  .faq-icon { color: var(--primary); font-size: 1.5rem; transition: 0.3s; }
+  .faq-card.open .faq-icon { transform: rotate(45deg); }
   
+  .faq-content { padding: 0 1.2rem 1.2rem; color: var(--text-muted); }
+  .faq-inner { border-top: 1px solid #f1f5f9; padding-top: 1rem; }
+
+  /* ===========================
+     VPN SECTION (Bento Style)
+     =========================== */
+  .vpn-section { margin-top: 5rem; }
+  .vpn-container {
+    background: var(--secondary);
+    color: white;
+    border-radius: 24px;
+    padding: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  /* Dekoration */
+  .vpn-container::before {
+      content: ''; position: absolute; top: -50%; right: -20%; width: 500px; height: 500px;
+      background: var(--primary); filter: blur(100px); opacity: 0.2; border-radius: 50%;
+  }
+
+  .vpn-content { flex: 1; min-width: 300px; position: relative; z-index: 2; }
+  .badge-mini { background: var(--accent); color: #064e3b; display: inline-block; padding: 0.25rem 0.8rem; border-radius: 6px; font-weight: 700; font-size: 0.8rem; margin-bottom: 1rem;}
   
+  .vpn-content h2 { color: white; font-size: 2rem; }
+  .checklist { margin: 1.5rem 0; }
+  .check-item { margin-bottom: 0.5rem; font-size: 1.1rem; }
+  .disclaimer { font-size: 0.85rem; opacity: 0.6; margin-top: 1rem; }
+
+  .vpn-visual-card {
+    flex: 1; min-width: 280px; max-width: 350px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    transform: rotate(3deg);
+    transition: 0.3s;
+  }
+  .vpn-visual-card:hover { transform: rotate(0); }
+  
+  .vpn-visual-card h3 { color: white; margin-bottom: 0.5rem; }
+  .price-tag { font-size: 2.5rem; font-weight: 800; color: var(--primary); text-shadow: 0 2px 10px rgba(0,0,0,0.3); margin-bottom: 1.5rem; }
+  .server-list { display: flex; flex-direction: column; gap: 0.5rem; opacity: 0.8; font-size: 0.9rem; }
+
+  /* ===========================
+     STEPS (Timeline)
+     =========================== */
+  .setup-guide { margin-top: 5rem; }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-top: 2rem;}
+  
+  .step-card {
+    background: white; padding: 2rem 1.5rem; border-radius: 16px; border: 1px solid #e2e8f0;
+    text-align: center; position: relative;
+  }
+  .step-num {
+    width: 40px; height: 40px; background: var(--secondary); color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    font-weight: 700; margin: 0 auto 1rem;
+  }
+  .highlight-step .step-num { background: var(--danger); animation: pulse-red 2s infinite; }
+  
+  @keyframes pulse-red { 0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.4); } 70% { box-shadow: 0 0 0 10px rgba(0,0,0,0); } }
+
+  .success-message {
+      background: var(--accent); color: white; text-align: center;
+      padding: 2rem; border-radius: 16px; margin-top: 2rem;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+  }
+  .success-message h3 { color: white; }
+
+  /* ===========================
+     ANIMATIONS (JS Reveal)
+     =========================== */
+  .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s ease-out; }
+  .reveal.active { opacity: 1; transform: translateY(0); }
+
+  .site-footer { text-align: center; padding: 2rem; color: var(--text-muted); font-size: 0.9rem; margin-top: 3rem; }
