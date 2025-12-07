@@ -1,70 +1,90 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const yearEl = document.getElementById("year");
-    if (yearEl) {
-      yearEl.textContent = new Date().getFullYear();
-    }
+    
+  // 1. Jahr aktualisieren
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // 2. Scroll Animation (Reveal)
+  const reveals = document.querySelectorAll(".reveal");
   
-    const faqItems = Array.from(document.querySelectorAll(".faq-item"));
-    const questions = Array.from(document.querySelectorAll(".faq-question"));
-    const searchInput = document.getElementById("searchInput");
-    const filterButtons = Array.from(document.querySelectorAll(".filter-btn"));
-  
-    // Accordion-Logic
-    questions.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const item = btn.closest(".faq-item");
-        const answer = item.querySelector(".faq-answer");
-        const isOpen = item.classList.contains("open");
-  
-        if (isOpen) {
-          item.classList.remove("open");
-          btn.setAttribute("aria-expanded", "false");
-          answer.hidden = true;
-        } else {
-          item.classList.add("open");
-          btn.setAttribute("aria-expanded", "true");
-          answer.hidden = false;
-        }
-      });
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    const elementVisible = 100;
+
+    reveals.forEach((reveal) => {
+      const elementTop = reveal.getBoundingClientRect().top;
+      if (elementTop < windowHeight - elementVisible) {
+        reveal.classList.add("active");
+      }
     });
+  };
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll(); // Einmal beim Laden feuern
+
+  // 3. FAQ Logic
+  const faqCards = Array.from(document.querySelectorAll(".faq-card"));
   
-    // Filter by Category
-    filterButtons.forEach((button) => {
-      button.addEventListener("click", () => {
-        const filter = button.getAttribute("data-filter");
-  
-        filterButtons.forEach((btn) => btn.classList.remove("active"));
-        button.classList.add("active");
-  
-        applyFilters(filter, searchInput?.value || "");
+  document.querySelectorAll(".faq-trigger").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".faq-card");
+      const content = card.querySelector(".faq-content");
+      const isOpen = card.classList.contains("open");
+
+      // Schließe alle anderen (Accordion-Style für cleaneren Look)
+      faqCards.forEach(c => {
+          if(c !== card) {
+              c.classList.remove("open");
+              c.querySelector(".faq-trigger").setAttribute("aria-expanded", "false");
+              c.querySelector(".faq-content").hidden = true;
+          }
       });
+
+      if (isOpen) {
+        card.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        content.hidden = true;
+      } else {
+        card.classList.add("open");
+        btn.setAttribute("aria-expanded", "true");
+        content.hidden = false;
+      }
     });
-  
-    // Live-Search
-    if (searchInput) {
-      searchInput.addEventListener("input", () => {
-        const activeFilterBtn = filterButtons.find((btn) => btn.classList.contains("active"));
-        const filter = activeFilterBtn ? activeFilterBtn.getAttribute("data-filter") : "all";
-        applyFilters(filter, searchInput.value);
-      });
-    }
-  
-    /**
-     * Kombinierter Filter (Kategorie + Textsuche)
-     */
-    function applyFilters(categoryFilter, searchTermRaw) {
-      const term = (searchTermRaw || "").trim().toLowerCase();
-  
-      faqItems.forEach((item) => {
-        const categories = (item.getAttribute("data-category") || "").split(/\s+/);
-        const inCategory = categoryFilter === "all" || categories.includes(categoryFilter);
-  
-        const textContent = item.textContent.toLowerCase();
-        const matchesSearch = !term || textContent.includes(term);
-  
-        const visible = inCategory && matchesSearch;
-        item.classList.toggle("hidden", !visible);
-      });
-    }
   });
-  
+
+  // 4. Filter & Suche
+  const searchInput = document.getElementById("searchInput");
+  const filterButtons = document.querySelectorAll(".filter-pill");
+
+  const filterContent = () => {
+      const activeBtn = document.querySelector(".filter-pill.active");
+      const category = activeBtn ? activeBtn.getAttribute("data-filter") : "all";
+      const term = searchInput.value.toLowerCase().trim();
+
+      faqCards.forEach((card) => {
+          const cardCats = card.getAttribute("data-category") || "";
+          const text = card.textContent.toLowerCase();
+          
+          const matchesCat = category === "all" || cardCats.includes(category);
+          const matchesSearch = !term || text.includes(term);
+
+          if(matchesCat && matchesSearch) {
+              card.classList.remove("hidden");
+          } else {
+              card.classList.add("hidden");
+          }
+      });
+  };
+
+  filterButtons.forEach(btn => {
+      btn.addEventListener("click", () => {
+          filterButtons.forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          filterContent();
+      });
+  });
+
+  if(searchInput) {
+      searchInput.addEventListener("input", filterContent);
+  }
+});
