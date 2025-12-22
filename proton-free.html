@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proton VPN Free installieren (Fire TV Stick)</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    .mini-nav{
+      margin:1.5rem auto 0;display:flex;justify-content:center;gap:.75rem;flex-wrap:wrap
+    }
+    .mini-nav a{
+      background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+      padding:.55rem 1rem;border-radius:999px;color:#fff;font-weight:600;font-size:.95rem;
+      backdrop-filter:blur(10px)
+    }
+    .mini-nav a:hover{background:rgba(255,255,255,.14);transform:translateY(-1px)}
+
+    .guide-block{
+      background:#fff;border:1px solid #e2e8f0;border-radius:24px;
+      box-shadow:var(--shadow-md);padding:2rem;margin-top:2.5rem
+    }
+    .step-split{
+      display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:start
+    }
+    @media(max-width:900px){.step-split{grid-template-columns:1fr}}
+
+    .screenshot{
+      width:100%;border-radius:18px;border:1px solid #e2e8f0;
+      box-shadow:var(--shadow-sm);background:#f8fafc
+    }
+    .caption{margin-top:.75rem;color:var(--text-muted);font-size:.95rem}
+
+    .bullets{margin:1rem 0 0;padding-left:1.2rem}
+    .bullets li{margin:.35rem 0}
+
+    .warning-box{
+      background:var(--warning-bg);border:1px solid var(--warning-border);
+      color:var(--warning-text);border-radius:18px;
+      padding:1.25rem;display:flex;gap:.9rem;margin-top:1.5rem
+    }
+    .warning-box .w-icon{font-size:1.6rem}
+
+    .code-pill{
+      display:inline-block;background:#0f172a;color:#fff;
+      border-radius:999px;padding:.35rem .75rem;
+      font-weight:700;font-size:.95rem
+    }
+
+    .pill-row{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.8rem}
+    .pill{
+      border:1px solid #e2e8f0;background:#fff;padding:.45rem .8rem;
+      border-radius:999px;font-weight:700;font-size:.9rem;
+      box-shadow:var(--shadow-sm)
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="hero-section">
+  <div class="hero-bg">
+    <div class="glowing-orb orb-1"></div>
+    <div class="glowing-orb orb-2"></div>
+  </div>
+
+  <div class="container hero-content">
+    <div class="hero-badge">🧊 Proton VPN – FREE</div>
+    <h1 class="hero-title">Proton VPN <span class="text-gradient">Free installieren</span></h1>
+    <p class="hero-subtitle">
+      Einfache Schritt-für-Schritt Anleitung für den <strong>Fire TV Stick</strong>.
+      Anmeldung erfolgt bequem per Handy-Code.
+    </p>
+
+    <div class="hero-actions">
+      <a href="#start" class="btn btn-primary btn-glow">Jetzt starten ↓</a>
+      <a href="index.html#vpn" class="btn btn-secondary">Zurück zur Hauptseite</a>
+    </div>
+
+    <div class="mini-nav">
+      <a href="#start">1) Free wählen</a>
+      <a href="#konto">2) Konto</a>
+      <a href="#install">3) Installieren</a>
+      <a href="#tvlogin">4) TV Login</a>
+      <a href="#free-server">5) Verbinden</a>
+    </div>
+  </div>
+</header>
+
+<main class="container main-wrapper">
+
+  <!-- STEP 1 -->
+  <section class="guide-block reveal" id="start">
+    <h2>1) Proton VPN Free öffnen</h2>
+    <p class="section-lead">Am besten direkt am Handy öffnen – kein Suchen nötig.</p>
+
+    <div class="step-split">
+      <div>
+        <ol class="bullets">
+          <li>
+            <strong>Link öffnen:</strong><br>
+            <a href="https://protonvpn.com/de/free-vpn?srsltid=AfmBOopyPP9mNYS7ezEpyOEo4RVI4S05wEYD18db-StvnYI25GOGXLkd"
+               target="_blank" rel="noopener" style="font-weight:700;word-break:break-all;">
+              https://protonvpn.com/de/free-vpn
+            </a>
+          </li>
+          <li><strong>„Free“ auswählen</strong></li>
+        </ol>
+
+        <div style="margin-top:1.2rem;">
+          <a href="https://protonvpn.com/de/free-vpn?srsltid=AfmBOopyPP9mNYS7ezEpyOEo4RVI4S05wEYD18db-StvnYI25GOGXLkd"
+             target="_blank" rel="noopener"
+             class="btn btn-primary btn-glow">
+            🔗 Proton VPN Free jetzt öffnen
+          </a>
+        </div>
+
+        <div class="warning-box">
+          <div class="w-icon">✅</div>
+          <div>
+            <strong>Wichtig:</strong> Wirklich <strong>Free</strong> auswählen – nicht Plus.
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <img class="screenshot" src="assets/photos/proton1.png" alt="Proton VPN Free auswählen">
+        <div class="caption">Free auswählen</div>
+      </div>
+    </div>
+
+    <div style="height:1.5rem"></div>
+
+    <div class="step-split">
+      <div>
+        <h3>Free nochmal bestätigen</h3>
+        <ul class="bullets">
+          <li>Im nächsten Schritt <strong>Free erneut auswählen</strong></li>
+        </ul>
+      </div>
+      <div>
+        <img class="screenshot" src="assets/photos/proton2.png" alt="Proton VPN Free bestätigen">
+        <div class="caption">Free bestätigen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="guide-block reveal" id="konto">
+    <h2>2) Konto erstellen</h2>
+    <ol class="bullets">
+      <li><strong>E-Mail eingeben</strong></li>
+      <li><strong>Eigenes Passwort festlegen</strong></li>
+      <li>Konto erstellen</li>
+    </ol>
+
+    <div class="warning-box">
+      <div class="w-icon">🔐</div>
+      <div>
+        <strong>Zugangsdaten merken!</strong><br>
+        Die brauchst du gleich für die Anmeldung.
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="guide-block reveal" id="install">
+    <h2>3) Auf dem Fire TV Stick installieren</h2>
+    <ol class="bullets">
+      <li>Suche (Lupe) öffnen</li>
+      <li><strong>Proton VPN</strong> suchen</li>
+      <li>Herunterladen → Installieren → Öffnen</li>
+    </ol>
+  </section>
+
+  <!-- STEP 4 -->
+  <section class="guide-block reveal" id="tvlogin">
+    <h2>4) Login per TV-Code</h2>
+    <ol class="bullets">
+      <li>In der App am TV auf <strong>Login</strong> klicken</li>
+      <li>Code erscheint am TV</li>
+      <li>Am Handy öffnen: <span class="code-pill">https://account.protonvpn.com/tv</span></li>
+      <li>Code eingeben</li>
+      <li>TV loggt sich automatisch ein</li>
+    </ol>
+
+    <div class="warning-box">
+      <div class="w-icon">📱</div>
+      <div>
+        Link unbedingt <strong>am Handy</strong> öffnen – nicht am TV eintippen.
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 5 -->
+  <section class="guide-block reveal" id="free-server">
+    <h2>5) Free-Server auswählen & verbinden</h2>
+    <ul class="bullets">
+      <li>Land mit <strong>„Free“</strong>-Label auswählen</li>
+      <li>Verbinden</li>
+      <li>Zurück zur <strong>Streaming-App</strong></li>
+      <li>Bei Problemen: <strong>1–2 Server testen</strong></li>
+    </ul>
+
+    <div class="pill-row">
+      <span class="pill">Nur Free-Server</span>
+      <span class="pill">Server wechseln</span>
+      <span class="pill">App neu starten</span>
+    </div>
+
+    <div class="success-message" style="margin-top:2rem;">
+      <h3>✅ Fertig</h3>
+      <p>Wenn verbunden, einfach normal weitermachen.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>© <span id="year"></span> Internet-Hilfe | Proton VPN Free</p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
