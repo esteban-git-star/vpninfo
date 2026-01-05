@@ -1,15 +1,21 @@
-/* styles.css */
-:root{
-    --bg: #0b0f17;
-    --panel: rgba(255,255,255,.06);
-    --panel-2: rgba(255,255,255,.08);
-    --text: rgba(255,255,255,.92);
-    --muted: rgba(255,255,255,.72);
-    --line: rgba(255,255,255,.12);
-    --accent: #ff7a18; /* Fire-TV-ish Orange */
-    --accent-2: #22c55e; /* success */
-    --shadow: 0 12px 40px rgba(0,0,0,.35);
-    --radius: 18px;
+/* anleitung.css — clean, mobile-first, übersichtlich
+   Inhalt/HTML-Texte bleiben unverändert. */
+
+   :root{
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --text: #101828;
+    --muted: #475467;
+    --line: #e5e7eb;
+  
+    --accent: #2563eb;      /* ruhiges Blau */
+    --accent-soft: #eff6ff; /* sehr helles Blau */
+    --success: #16a34a;
+    --success-soft: #ecfdf3;
+  
+    --radius: 16px;
+    --shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+    --shadow-soft: 0 2px 10px rgba(16, 24, 40, 0.05);
   }
   
   *{ box-sizing: border-box; }
@@ -17,41 +23,41 @@
   body{
     margin: 0;
     font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-    background: radial-gradient(1200px 700px at 20% -10%, rgba(255,122,24,.18), transparent 55%),
-                radial-gradient(900px 600px at 80% 10%, rgba(34,197,94,.12), transparent 60%),
-                var(--bg);
+    background: var(--bg);
     color: var(--text);
-    line-height: 1.4;
+    line-height: 1.5;
   }
   
   .container{
-    width: min(980px, calc(100% - 32px));
+    width: min(940px, calc(100% - 32px));
     margin-inline: auto;
   }
   
   .site-header{
-    padding: 28px 0 18px;
+    padding: 20px 0 16px;
     border-bottom: 1px solid var(--line);
-    background: linear-gradient(to bottom, rgba(255,255,255,.03), transparent);
+    background: linear-gradient(180deg, #ffffff, rgba(255,255,255,0.65));
   }
   
   .badge{
     display: inline-flex;
     align-items: center;
     gap: 10px;
-    padding: 8px 12px;
+    padding: 6px 10px;
     border-radius: 999px;
-    background: rgba(255,255,255,.07);
+    background: #fff;
     border: 1px solid var(--line);
     color: var(--muted);
-    font-size: 13px;
+    font-size: 12px;
+    box-shadow: var(--shadow-soft);
   }
   
   h1{
-    margin: 12px 0 6px;
-    font-size: 28px;
+    margin: 10px 0 6px;
+    font-size: 24px;
     letter-spacing: -0.02em;
   }
+  
   .subtitle{
     margin: 0 0 12px;
     color: var(--muted);
@@ -61,28 +67,39 @@
   .meta{
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 8px;
   }
+  
   .pill{
     font-size: 12px;
     color: var(--muted);
     border: 1px solid var(--line);
-    background: rgba(255,255,255,.06);
+    background: #fff;
     padding: 6px 10px;
     border-radius: 999px;
   }
   
   .card{
-    margin: 16px 0;
+    margin: 14px 0;
     padding: 16px;
     border-radius: var(--radius);
     border: 1px solid var(--line);
-    background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.04));
-    box-shadow: var(--shadow);
+    background: var(--card);
+    box-shadow: var(--shadow-soft);
   }
   
-  .note h2, .done h2{
-    margin-top: 0;
+  .note h2, .done h2{ margin-top: 0; }
+  
+  h2{
+    margin: 0 0 10px;
+    font-size: 16px;
+    letter-spacing: -0.01em;
+  }
+  
+  h3{
+    margin: 16px 0 10px;
+    font-size: 14px;
+    color: var(--text);
   }
   
   .checklist{
@@ -94,32 +111,32 @@
   
   .step-head{
     display: grid;
-    grid-template-columns: 44px 1fr;
+    grid-template-columns: 36px 1fr;
     gap: 12px;
     align-items: start;
     margin-bottom: 10px;
   }
   
   .step-no{
-    width: 44px;
-    height: 44px;
-    border-radius: 14px;
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
     display: grid;
     place-items: center;
     font-weight: 800;
-    font-size: 18px;
-    color: #111;
-    background: linear-gradient(180deg, var(--accent), #ffb86b);
-    box-shadow: 0 10px 30px rgba(255,122,24,.22);
+    font-size: 14px;
+    color: #fff;
+    background: var(--accent);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.18);
   }
   
   .step h2{
     margin: 0;
-    font-size: 18px;
-    letter-spacing: -0.01em;
+    font-size: 16px;
   }
+  
   .step-desc{
-    margin: 6px 0 0;
+    margin: 4px 0 0;
     color: var(--muted);
     font-size: 13px;
   }
@@ -127,13 +144,20 @@
   .steps{
     margin: 0;
     padding-left: 18px;
-    color: var(--text);
-  }
-  .steps li{
-    margin: 10px 0;
     color: var(--muted);
   }
+  
+  .steps li{
+    margin: 10px 0;
+  }
+  
   .steps strong{ color: var(--text); }
+  
+  a{
+    color: var(--accent);
+    text-decoration: none;
+  }
+  a:hover{ text-decoration: underline; }
   
   .divider{
     height: 1px;
@@ -141,96 +165,113 @@
     margin: 14px 0;
   }
   
-  h3{
-    margin: 0 0 10px;
-    font-size: 15px;
-    color: var(--text);
-  }
-  
   .callout{
     margin-top: 10px;
     padding: 12px;
     border-radius: 14px;
-    border: 1px solid rgba(255,122,24,.22);
-    background: rgba(255,122,24,.10);
+    border: 1px solid #dbeafe;
+    background: var(--accent-soft);
     color: var(--muted);
   }
   .callout p{ margin: 6px 0; }
   
   .media{
     margin-top: 10px;
-    border-radius: 16px;
+    border-radius: 14px;
     overflow: hidden;
     border: 1px solid var(--line);
-    background: rgba(0,0,0,.25);
+    background: #fff;
+    box-shadow: var(--shadow-soft);
   }
-  .media-label{
-    font-size: 12px;
-    color: var(--muted);
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--line);
-    background: rgba(255,255,255,.03);
-  }
+  
   .media-img{
     display: block;
     width: 100%;
     height: auto;
     min-height: 160px;
     background:
+      linear-gradient(180deg, rgba(16,24,40,0.04), rgba(16,24,40,0.02)),
       repeating-linear-gradient(
         45deg,
-        rgba(255,255,255,.06),
-        rgba(255,255,255,.06) 10px,
-        rgba(255,255,255,.02) 10px,
-        rgba(255,255,255,.02) 20px
+        rgba(16,24,40,0.04),
+        rgba(16,24,40,0.04) 10px,
+        rgba(16,24,40,0.02) 10px,
+        rgba(16,24,40,0.02) 20px
       );
   }
   
-  /* If img has no src, hide broken icon and keep placeholder */
-  .media-img:not([src]), .media-img[src=""]{
+  /* verhindert „broken image“-Icon, wenn src leer ist */
+  .media-img[src=""]{
+    visibility: hidden;
+  }
+  .media:has(.media-img[src=""])::before{
+    content: "Screenshot hier einfügen";
+    display: block;
+    padding: 16px;
+    color: var(--muted);
+    font-size: 13px;
+    background: rgba(16,24,40,0.02);
+    border-bottom: 1px solid var(--line);
+  }
+  .media:has(.media-img[src=""])::after{
     content: "";
+    display: block;
+    height: 180px;
+    background:
+      linear-gradient(180deg, rgba(16,24,40,0.04), rgba(16,24,40,0.02)),
+      repeating-linear-gradient(
+        45deg,
+        rgba(16,24,40,0.04),
+        rgba(16,24,40,0.04) 10px,
+        rgba(16,24,40,0.02) 10px,
+        rgba(16,24,40,0.02) 20px
+      );
   }
   
+  /* Code-Zeile (4382097) übersichtlich */
   .code-row{
     list-style: none;
     margin-left: -18px;
     padding-left: 0;
+  
     display: grid;
     grid-template-columns: 1fr auto auto;
     gap: 10px;
     align-items: center;
+  
     padding: 12px;
-    border-radius: 16px;
-    border: 1px dashed rgba(255,255,255,.18);
-    background: rgba(255,255,255,.04);
+    border-radius: 14px;
+    border: 1px solid var(--line);
+    background: #f9fafb;
   }
   
   .code{
     font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
-    font-size: 15px;
+    font-size: 14px;
     padding: 8px 10px;
     border-radius: 12px;
-    border: 1px solid rgba(255,255,255,.14);
-    background: rgba(0,0,0,.25);
-    color: #fff;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--text);
   }
   
   .copy{
     appearance: none;
-    border: 1px solid rgba(255,255,255,.16);
-    background: rgba(255,255,255,.06);
+    border: 1px solid var(--line);
+    background: #fff;
     color: var(--text);
     padding: 10px 12px;
-    border-radius: 14px;
+    border-radius: 12px;
     font-weight: 700;
     cursor: pointer;
   }
   .copy:active{ transform: translateY(1px); }
   
   .done{
-    border-color: rgba(34,197,94,.28);
-    background: linear-gradient(180deg, rgba(34,197,94,.14), rgba(255,255,255,.04));
+    border-color: #bbf7d0;
+    background: var(--success-soft);
   }
+  
   .actions{
     margin-top: 12px;
     display: flex;
@@ -243,15 +284,18 @@
     align-items: center;
     justify-content: center;
     padding: 10px 14px;
-    border-radius: 14px;
-    border: 1px solid rgba(255,255,255,.16);
-    background: rgba(255,255,255,.06);
+    border-radius: 12px;
+    border: 1px solid var(--line);
+    background: #fff;
     color: var(--text);
     text-decoration: none;
     font-weight: 800;
+    box-shadow: var(--shadow-soft);
   }
+  
   .btn-ghost{
     background: transparent;
+    box-shadow: none;
   }
   
   .footer{
@@ -261,19 +305,46 @@
     text-align: center;
   }
   
-  /* Desktop tweaks */
+  /* Desktop: etwas mehr Luft */
   @media (min-width: 860px){
-    h1{ font-size: 36px; }
+    h1{ font-size: 32px; }
     .card{ padding: 18px; }
     .media-img{ min-height: 220px; }
   }
   
+  /* Dark Mode automatisch (ruhig, nicht knallig) */
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg: #0b1220;
+      --card: #0f172a;
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.72);
+      --line: rgba(255,255,255,.12);
+  
+      --accent: #60a5fa;
+      --accent-soft: rgba(96,165,250,.12);
+  
+      --success-soft: rgba(22,163,74,.12);
+      --shadow-soft: none;
+    }
+  
+    .site-header{
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), transparent);
+    }
+  
+    .badge, .pill, .card, .btn, .copy, .code{
+      background: rgba(255,255,255,.04);
+      border-color: var(--line);
+    }
+  
+    .code-row{ background: rgba(255,255,255,.03); }
+  }
+  
   /* Print */
   @media print{
-    :root{ --bg: #fff; --text: #111; --muted: #333; }
     body{ background: #fff; color: #111; }
     .site-header{ border-bottom: 1px solid #ddd; }
-    .card{ box-shadow: none; border-color: #ddd; }
+    .card{ box-shadow: none; }
     .copy, #print, .btn-ghost{ display: none !important; }
   }
   
