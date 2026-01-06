@@ -200,6 +200,48 @@
       );
   }
   
+
+/* =========================
+   VIDEO – MOBILE FIRST (16:9)
+   ========================= */
+
+   .video-card{
+    padding: 14px;
+  }
+  
+  .video{
+    width: 100%;
+    display: block;
+  
+    /* sauberes 16:9 */
+    aspect-ratio: 16 / 9;
+    height: auto;
+  
+    /* verhindert "Video frisst Screen" */
+    max-height: 38vh;
+  
+    background: #000;
+    border-radius: 12px;
+    border: 1px solid var(--line);
+  
+    object-fit: contain; /* NICHT cover bei 16:9 */
+  }
+  
+  /* Desktop: darf etwas größer sein */
+  @media (min-width: 900px){
+    .video{
+      max-height: 420px;
+    }
+  }
+
+  
+  .video-card{
+    margin-bottom: 8px;
+  }
+  
+
+
+
   /* verhindert „broken image“-Icon, wenn src leer ist */
   .media-img[src=""]{
     visibility: hidden;
