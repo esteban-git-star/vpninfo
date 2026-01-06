@@ -33,6 +33,30 @@
       </ul>
     </section>
 
+    <section class="card video-card" aria-label="Video-Anleitung">
+        <h2>Video</h2>
+      
+        <video
+          class="video"
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/video-poster.jpg"
+        >
+          <source src="assets/anleitung/anleitung.mp4" type="video/mp4" />
+          <!-- Optional: falls du eine WebM Version hast (Android/Chrome liebt das) -->
+          <!-- <source src="assets/anleitung.webm" type="video/webm" /> -->
+      
+          Dein Gerät unterstützt dieses Video nicht.
+        </video>
+      
+        <p class="video-hint">
+          Wenn das Video nicht lädt: <a href="assets/anleitung/anleitung.mp4" download>Video herunterladen</a>
+        </p>
+      </section>
+      
+
+
     <!-- Schritt 1 -->
     <section class="step card" id="step-1">
       <div class="step-head">
