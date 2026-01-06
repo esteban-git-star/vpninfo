@@ -1,366 +1,224 @@
-<!DOCTYPE html>
+<!-- index.html -->
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hilfe bei Rucklern & Internet-Stau</title>
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fire TV Stick – Sideload Schritt-für-Schritt</title>
+  <meta name="description" content="Einfache Anleitung: Sideload aktivieren und App über Downloader installieren." />
+  <link rel="stylesheet" href="anleitung.css" />
 </head>
 <body>
+  <header class="site-header">
+    <div class="container">
+      <div class="badge">📺 Fire TV Stick</div>
+      <h1>Sideload aktivieren & App installieren</h1>
+      <p class="subtitle">Schritt-für-Schritt. Einfach. Mobile-first. ✅</p>
 
-  <header class="hero-section">
-    <div class="hero-bg">
-        <div class="glowing-orb orb-1"></div>
-        <div class="glowing-orb orb-2"></div>
-    </div>
-    
-    <div class="container hero-content">
-      <div class="hero-badge">🚀 Internet-Probleme einfach gelöst</div>
-      <h1 class="hero-title">Warum <span class="text-gradient">ruckelt</span> dein TV abends?</h1>
-      <p class="hero-subtitle">
-        Alles läuft zäh, Streams hängen, Spiele laggen – aber der Speedtest sagt „alles okay“? 
-        Wir erklären dir, was da los ist und wie du den Stau umfährst.
-      </p>
-      <div class="hero-actions">
-          <a href="#loesung" class="btn btn-primary btn-glow">Zur Lösung springen ↓</a>
-          <a href="#faq" class="btn btn-secondary">Fragen lesen</a>
+      <div class="meta">
+        <span class="pill">⏱️ ~5–10 Min</span>
+        <span class="pill">🧩 Ohne Vorwissen</span>
+        <span class="pill">🔒 Vorsicht bei unbekannten Apps</span>
       </div>
     </div>
   </header>
 
-  <div class="container relative z-50">
-    <div class="telekom-alert reveal">
-      <div class="alert-icon">⚠️</div>
-      <div class="alert-content">
-        <h3>Wichtiger Hinweis für Neukunden</h3>
-        <p>
-          <strong>Kein TxxxM Verkauf an Neukunden mit Telekom als Anbieter ohne VPN!</strong><br>
-          Egal ob kostenloses oder bezahltes VPN – ohne Umleitung funktioniert es nicht zuverlässig. 
-          Sonst haben wir beide nur Kopfschmerzen. Bitte vorher einrichten!
+  <main class="container">
+    <section class="card note">
+      <h2>Bevor du startest</h2>
+      <ul class="checklist">
+        <li>Fire TV Stick ist eingeschaltet und du bist im Startmenü</li>
+        <li>Internetverbindung ist aktiv</li>
+        <li>Du machst nur das, was du wirklich brauchst (keine dubiosen Quellen)</li>
+      </ul>
+    </section>
+
+    <section class="card video-card" aria-label="Video-Anleitung">
+        <h2>Video</h2>
+      
+        <video
+          class="video"
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/video-poster.jpg"
+        >
+          <source src="assets/anleitung/anleitung.mp4" type="video/mp4" />
+          <!-- Optional: falls du eine WebM Version hast (Android/Chrome liebt das) -->
+          <!-- <source src="assets/anleitung.webm" type="video/webm" /> -->
+      
+          Dein Gerät unterstützt dieses Video nicht.
+        </video>
+      
+        <p class="video-hint">
+          Wenn das Video nicht lädt: <a href="assets/anleitung/anleitung.mp4" download>Video herunterladen</a>
         </p>
-      </div>
-    </div>
-  </div>
-
-  <main class="container main-wrapper">
-  
-      <section class="intro reveal">
-        <div class="section-header">
-            <h2>Das Problem in 4 Bildern</h2>
-            <p class="section-lead">
-            Stell dir dein Internet wie eine Autobahn vor. Hier siehst du, warum es abends zum Stau kommt.
-            </p>
-        </div>
-  
-        <div class="intro-grid">
-          <article class="feature-card">
-            <div class="icon-box">📉</div>
-            <h3>1. Der Feierabend-Stau</h3>
-            <p>
-              Zwischen <strong>18:00 und 23:00 Uhr</strong> wollen alle gleichzeitig streamen oder zocken. 
-              Wie auf der A9 im Berufsverkehr: Es wird voll.
-            </p>
-          </article>
-  
-          <article class="feature-card">
-            <div class="icon-box">🚧</div>
-            <h3>2. Die verstopfte Ausfahrt</h3>
-            <p>
-              Dein Anbieter (z.B. Telekom) und die Streaming-Dienste tauschen Daten an <strong>Übergabestellen</strong> aus.
-              Diese "Ausfahrten" sind oft künstlich zu klein gehalten.
-            </p>
-          </article>
-  
-          <article class="feature-card">
-            <div class="icon-box">⚽</div>
-            <h3>3. Wenn Fußball läuft...</h3>
-            <p>
-              Bei Live-Sport oder großen Updates wollen Millionen durch die enge Ausfahrt.
-              Ergebnis: Dein Bild bleibt stehen oder lädt nach.
-            </p>
-          </article>
-  
-          <article class="feature-card highlight-card" id="loesung">
-            <div class="icon-box highlight-icon">💡</div>
-            <h3>4. Die Lösung: Umleitung</h3>
-            <p>
-              Wenn die Hauptstraße dicht ist, nimmst du eine Umgehungsstraße. Im Internet macht das ein <strong>VPN</strong>.
-              Es leitet deine Daten am Stau vorbei.
-            </p>
-          </article>
-        </div>
-
-        <div class="comparison-wrapper reveal">
-            <div class="section-header">
-                <h3>Der Unterschied auf einen Blick</h3>
-            </div>
-            <div class="comparison-grid">
-              <div class="compare-col is-bad">
-                <div class="compare-header">
-                    <span class="status-dot dot-red"></span>
-                    <h4>Ohne Umleitung</h4>
-                </div>
-                <div class="route-visual">
-                  <span>Dein Zuhause</span>
-                  <span class="arrow">⬇️</span>
-                  <span>Provider Hauptstraße</span>
-                  <span class="arrow">⬇️</span>
-                  <span class="tag blocked">🚧 Verstopfte Ausfahrt</span>
-                  <span class="arrow">⬇️</span>
-                  <span>Ziel (TV/Spiel)</span>
-                </div>
-                <div class="result-badge badge-bad">Ergebnis: Ruckler & Lag</div>
-              </div>
-              
-              <div class="compare-col is-good">
-                <div class="compare-header">
-                    <span class="status-dot dot-green"></span>
-                    <h4>Mit VPN (Umleitung)</h4>
-                </div>
-                <div class="route-visual">
-                  <span>Dein Zuhause</span>
-                  <span class="arrow">⬇️</span>
-                  <span class="tag vpn-active">🛡️ VPN-App (Tunnel)</span>
-                  <span class="arrow">⬇️</span>
-                  <span class="tag free">✅ Freie Fahrt (z.B. Amsterdam)</span>
-                  <span class="arrow">⬇️</span>
-                  <span>Ziel (TV/Spiel)</span>
-                </div>
-                <div class="result-badge badge-good">Ergebnis: Flüssiges Bild</div>
-              </div>
-            </div>
-        </div>
       </section>
+      
 
-    <section class="search-section reveal">
-      <div class="section-header">
-          <h2>Häufige Fragen & Antworten</h2>
-          <p class="section-lead">Wähle ein Thema oder suche direkt.</p>
-      </div>
 
-      <div class="controls-container">
-        <div class="search-bar">
-            <input type="text" id="searchInput" placeholder="Suchbegriff... (z.B. Telekom, Kosten)"/>
-            <button class="search-btn">🔍</button>
-        </div>
-
-        <div class="filter-tags">
-          <button class="filter-pill active" data-filter="all">Alle</button>
-          <button class="filter-pill" data-filter="problem">Das Problem</button>
-          <button class="filter-pill" data-filter="loesung">Die Lösung</button>
-          <button class="filter-pill" data-filter="telekom">Telekom</button>
-          <button class="filter-pill" data-filter="alltag">Kosten & Alltag</button>
+    <!-- Schritt 1 -->
+    <section class="step card" id="step-1">
+      <div class="step-head">
+        <div class="step-no">1</div>
+        <div>
+          <h2>SCHRITT 1: In die Einstellungen</h2>
+          <p class="step-desc">Wir gehen ins Einstellungsmenü.</p>
         </div>
       </div>
+
+      <ol class="steps">
+        <li>Fire TV Stick einschalten</li>
+        <li>Im Startbildschirm oben rechts auf das <strong>Zahnrad (⚙️ Einstellungen)</strong> drücken</li>
+      </ol>
     </section>
 
-    <section class="faq-list reveal" id="faq">
-        
-        <article class="faq-card" data-category="problem telekom">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-title">Ich bin bei der Telekom – warum trifft es mich oft?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-content" hidden>
-            <div class="faq-inner">
-                <p>Das liegt an der „Peering-Politik“ der Telekom. Sie hat riesige Datenmengen, baut aber die Übergabestellen zu anderen Netzen oft nicht schnell genug aus. Deshalb stehen Telekom-Kunden abends häufiger im „Daten-Stau“ als andere.</p>
-            </div>
+    <!-- Schritt 2 -->
+    <section class="step card" id="step-2">
+      <div class="step-head">
+        <div class="step-no">2</div>
+        <div>
+          <h2>SCHRITT 2: Entwickleroptionen finden</h2>
+          <p class="step-desc">Jetzt prüfen wir, ob die Entwickleroptionen schon da sind.</p>
+        </div>
+      </div>
+
+      <ol class="steps">
+        <li><strong>Mein Fire TV</strong> öffnen</li>
+        <li>
+          Siehst du <strong>„Entwickleroptionen“</strong>?
+          <div class="callout">
+            <p><strong>JA:</strong> Öffnen und weiter zu <a href="#step-4">Schritt 4</a>.</p>
+            <p><strong>NEIN:</strong> Dann jetzt freischalten 👇 (weiter mit Abschnitt darunter)</p>
           </div>
-        </article>
-  
-        <article class="faq-card" data-category="loesung alltag">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-title">Was genau ist „VPN“? Muss ich Kabel verlegen?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-content" hidden>
-            <div class="faq-inner">
-                <p>Nein! Ein VPN ist nur eine <strong>App</strong>. Du installierst sie auf dem Fire TV Stick, Handy oder PC. Sie baut einen unsichtbaren, geschützten Tunnel auf, durch den deine Daten am Stau vorbeifließen.</p>
-            </div>
-          </div>
-        </article>
+        </li>
+      </ol>
 
-        <article class="faq-card" data-category="problem">
-          <button class="faq-trigger" aria-expanded="false">
-            <span class="faq-title">Warum läuft YouTube/Netflix, aber Live-TV hängt?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-content" hidden>
-            <div class="faq-inner">
-                <p>Netflix und YouTube haben oft „Privatstraßen“ (eigene Server) direkt im Netz deines Anbieters. Unser Live-Signal muss über die „öffentliche Straße“ kommen – und genau dort ist der Stau.</p>
-            </div>
-          </div>
-        </article>
-  
-        <article class="faq-card" data-category="loesung alltag">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-title">Muss ich das VPN immer anlassen?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content" hidden>
-              <div class="faq-inner">
-                  <p>Nicht unbedingt. Morgens läuft meist alles flüssig. Aber abends oder bei Live-Sport ist es dein „Rettungsanker“. Viele lassen es auch dauerhaft an für mehr Privatsphäre.</p>
-              </div>
-            </div>
-          </article>
+      <div class="divider"></div>
 
-          <article class="faq-card" data-category="alltag loesung">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-title">Kostet ein VPN Geld?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content" hidden>
-              <div class="faq-inner">
-                  <p>In der Regel: Ja. Kostenlose VPNs sind oft zu langsam für TV. Gute Anbieter kosten ca. 2–4 € im Monat. Dafür bekommst du eine stabile „Umgehungsstraße“ ohne Ruckler.</p>
-              </div>
-            </div>
-          </article>
+      <h3>Entwickleroptionen freischalten (falls sie fehlen)</h3>
 
-          <article class="faq-card" data-category="alltag loesung">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-title">Kann ich damit im Urlaub deutsches TV schauen?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content" hidden>
-              <div class="faq-inner">
-                  <p>Ja, das ist einer der größten Vorteile! Normalerweise sind deutsche Mediatheken oder TV-Apps im Ausland gesperrt (Geoblocking).</p>
-                  <p>Mit der VPN-App auf deinem Handy oder Tablet stellst du den Standort einfach auf „Deutschland“. Für das Internet bist du dann virtuell wieder zuhause und kannst Tatort, Sport oder Nachrichten bequem am Hotel-Pool schauen.</p>
-              </div>
-            </div>
-        </article>
-
-        <article class="faq-card" data-category="alltag loesung">
-            <button class="faq-trigger" aria-expanded="false">
-              <span class="faq-title">Was bringt mir das VPN sonst noch (Sicherheit)?</span>
-              <span class="faq-icon">+</span>
-            </button>
-            <div class="faq-content" hidden>
-              <div class="faq-inner">
-                  <p>Ein VPN ist dein „digitaler Bodyguard“. Besonders in <strong>öffentlichen WLANs</strong> (Hotels, Bahn, Cafés, Flughafen) ist die Verbindung oft unsicher und offen wie eine Postkarte.</p>
-                  <p>Wenn du das VPN einschaltest, werden deine Daten (Passwörter, Online-Banking, E-Mails) verschlüsselt. Niemand im gleichen WLAN kann mitlesen. Deshalb empfehlen Experten, in fremden Netzen <strong>immer</strong> das VPN zu aktivieren.</p>
-              </div>
-            </div>
-        </article>
-  
-    </section>
-
-    <section class="vpn-section reveal" id="vpn">
-        <div class="vpn-container">
-            <div class="vpn-content">
-                <div class="badge-mini">Unsere Empfehlung</div>
-                <h2>Welches VPN nehmen?</h2>
-                <p>Wichtig: Es muss <strong>einfach</strong> sein und eine <strong>App für dein Gerät</strong> haben.</p>
-                
-                <div class="checklist">
-                    <div class="check-item">✅ Einfache App (FireTV/ Android/ iOS)</div>
-                    <div class="check-item">✅ Stabil & Schnell</div>
-                    <div class="check-item">✅ extrem günstig im 2-Jahres-Plan</div>
-                </div>
-
-                <!-- ✅ GEÄNDERT: statt Affiliate/Kaufen -> Anleitung -->
-                <a class="btn btn-primary btn-glow" href="privado.html">
-                    👉 Zur PrivadoVPN Anleitung
-                </a>
-                <p class="disclaimer">
-                  Auf der nächsten Seite findest du die komplette Schritt-für-Schritt Anleitung
-                  (Kauf, Installation, Login & Verbinden).
-                </p>
-            </div>
+      <ol class="steps">
+        <li><strong>Mein Fire TV → INFO</strong></li>
+        <li>
+          Markiere deinen Fire TV Stick (z. B. <em>Fire TV Stick 4K</em>)
+          <div class="media">
             
-            <div class="vpn-visual-card">
-                <h3>PrivadoVPN Anleitung</h3>
-                <div class="price-tag">Premium <small>/ stabil</small></div>
-                <div class="server-list">
-                    <span>📌 Schritt-für-Schritt Setup</span>
-                    <span>📌 Fire TV Stick / Android</span>
-                    <span>📌 Server-Tipps (NL/BE/CH/...)</span>
-                </div>
-            </div>
-        </div>
+            <img class="media-img" src="assets/anleitung/1.png" alt="Screenshot: Fire TV Stick Info / Gerät markieren" />
+          </div>
+        </li>
+        <li>Drücke auf der Fernbedienung <strong>7× schnell OK</strong></li>
+        <li>
+          Meldung erscheint: <strong>„Du bist jetzt Entwickler“</strong>
+          <div class="media">
+            
+            <img class="media-img" src="assets/anleitung/2.png" alt="Screenshot: Du bist jetzt Entwickler" />
+          </div>
+        </li>
+        <li>Zurück → jetzt sind <strong>Entwickleroptionen</strong> sichtbar</li>
+      </ol>
     </section>
 
-    <!-- (bleibt wie gehabt) -->
-    <section class="setup-guide reveal" id="setup">
-        <div class="section-header">
-            <h2>In 4 Schritten startklar</h2>
-            <p class="section-lead">So installierst du es auf dem Fire TV Stick.</p>
+    <!-- Schritt 4 (deine Nummerierung beibehalten) -->
+    <section class="step card" id="step-4">
+      <div class="step-head">
+        <div class="step-no">4</div>
+        <div>
+          <h2>SCHRITT 4: Downloader installieren</h2>
+          <p class="step-desc">Wir holen die App „Downloader“ aus dem Store.</p>
         </div>
-  
-        <div class="steps-grid">
-          <div class="step-card">
-            <div class="step-num">1</div>
-            <h4>Suchen & Laden</h4>
-            <p>Geh auf die Lupe (Suche) im Fire TV. Tippe „Privado“, wähle die App und lade sie herunter.</p>
-          </div>
-  
-          <div class="step-card">
-            <div class="step-num">2</div>
-            <h4>Einloggen</h4>
-            <p>Öffne die App. Gib Email & Passwort ein, die du per Mail erhalten hast.</p>
-          </div>
-  
-          <div class="step-card">
-            <div class="step-num">3</div>
-            <h4>Verbinden</h4>
-            <p>Wähle einen Standort (z.B. <strong>Frankfurt</strong>) und drücke den großen Verbinden-Knopf.</p>
-          </div>
-  
-          <div class="step-card highlight-step">
-            <div class="step-num">!</div>
-            <h4>Bestätigen</h4>
-            <p>Wichtig: Bei der Frage „Verbindungsanfrage zulassen?“ unbedingt auf <strong>OK</strong> klicken.</p>
-          </div>
-        </div>
+      </div>
 
-        <div class="success-message">
-            <h3>🎉 Fertig!</h3>
-            <p>Wenn es grün leuchtet („Verbunden“), ist der Stau umfahren. Geh zurück in deine TV-App und genieße flüssiges Bild.</p>
-        </div>
+      <ol class="steps">
+        <li>Zurück zum Startbildschirm</li>
+        <li><strong>Suche</strong> öffnen</li>
+        <li>
+          Nach <strong>Downloader</strong> suchen (oranges Logo)
+          <div class="media">
+            
+            <img class="media-img" src="assets/anleitung/3.png" alt="Screenshot: Suche nach Downloader" />
+          </div>
+        </li>
+        <li><strong>Installieren</strong></li>
+        <li><strong>Downloader öffnen</strong></li>
+      </ol>
     </section>
 
-    <section class="free-vpn-section reveal" id="free-vpn">
-      <div class="container">
-          <div class="free-vpn-card">
-              <div class="free-icon-wrapper">
-                  <div class="free-emoji">🎁</div>
-              </div>
-              <div class="free-content">
-                  <div class="badge-free">Spar-Tipp</div>
-                  <h3>Kein Budget? Probier die kostenlose Lösung!</h3>
-                  <p>
-                      Du möchtest erst mal kein Geld ausgeben? <strong>Proton VPN</strong> ist einer der wenigen seriösen Anbieter 
-                      mit einer <strong>dauerhaft kostenlosen Version</strong> (ohne Datenlimit).
-                  </p>
-                  <p class="free-note">
-                      <em>Hinweis: Kostenlose Server sind abends oft voller als die Premium-Variante, reichen aber oft völlig aus.</em>
-                  </p>
+    <!-- Schritt 5 -->
+    <section class="step card" id="step-5">
+      <div class="step-head">
+        <div class="step-no">5</div>
+        <div>
+          <h2>SCHRITT 5: Downloader erlauben</h2>
+          <p class="step-desc">Berechtigungen bestätigen, dann Code eingeben und installieren.</p>
+        </div>
+      </div>
 
-                  <!-- ✅ GEÄNDERT: statt Drive-PDF -> Unterseite -->
-                  <a href="proton-free.html" class="btn-free-download">
-                      👉 Proton VPN Free Anleitung öffnen
-                  </a>
+      <ol class="steps">
+        <li>
+          Falls eine Meldung kommt: <strong>Zulassen / Erlauben / OK</strong> → alles bestätigen
+        </li>
 
-                  <p class="free-note" style="margin-top: 1rem;">
-                      <em>Auf der nächsten Seite: Konto erstellen, Fire TV Login per Code & Free-Server auswählen.</em>
-                  </p>
-              </div>
+        <li class="code-row">
+          <span>Code eingeben:</span>
+          <code class="code">4382097</code>
+          <button class="copy" type="button" data-copy="4382097">Kopieren</button>
+        </li>
+
+        <li><strong>Download starten</strong></li>
+
+        <li>
+          <strong>Installieren</strong> → ggf. leitet er euch zu den Einstellungen, dort dann <strong>DOWNLOADER zulassen</strong>
+          <div class="media">
+            
+            <img class="media-img" src="assets/anleitung/4.png" alt="Screenshot: Unbekannte Apps installieren / Downloader erlauben" />
           </div>
+        </li>
+
+        <li>Dann ggf. nochmal <strong>Installieren</strong> klicken</li>
+
+        <li>
+          <strong>Öffnen</strong> → Anmeldedaten eingeben → <strong>alles zulassen (WICHTIG)</strong>
+        </li>
+      </ol>
+    </section>
+
+    <!-- Fertig -->
+    <section class="card done" id="done">
+      <h2>✅ FERTIG</h2>
+      <p>Wenn alles geklappt hat, läuft die App – und Sideload ist aktiv.</p>
+      <div class="actions">
+        <a class="btn" href="#step-1">Nach oben</a>
+        <button class="btn btn-ghost" type="button" id="print">Drucken / PDF</button>
       </div>
     </section>
 
+    <footer class="footer">
+      <p>
+        Tipp: Installiere nur Apps aus Quellen, denen du vertraust.
+      </p>
+    </footer>
   </main>
 
-  <footer class="site-footer">
-    <div class="container">
-      <p>© <span id="year"></span> Internet-Hilfe | Designed with ❤️</p>
-    </div>
-  </footer>
+  <script>
+    // Copy button for the code
+    document.querySelectorAll("[data-copy]").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const text = btn.getAttribute("data-copy") || "";
+        try {
+          await navigator.clipboard.writeText(text);
+          const old = btn.textContent;
+          btn.textContent = "Kopiert ✅";
+          setTimeout(() => (btn.textContent = old), 1100);
+        } catch {
+          // fallback
+          prompt("Kopiere den Code:", text);
+        }
+      });
+    });
 
-  <script src="script.js"></script>
+    // Print to PDF
+    document.getElementById("print")?.addEventListener("click", () => window.print());
+  </script>
 </body>
 </html>
